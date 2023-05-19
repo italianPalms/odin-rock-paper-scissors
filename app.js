@@ -13,6 +13,8 @@ function getComputerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {
+    const flexPlayerSelection = playerSelection.toLowerCase();
+    const flexComputerSelection = computerSelection.toLowerCase();
     if (playerSelection === "Rock") {
         if (computerSelection === "Rock") {
             return "It's a tie";
