@@ -1,4 +1,7 @@
 
+let playerScore = 0
+let computerScore = 0
+
 function getComputerChoice() {
     let choices = ['Rock', 'Paper', 'Scissors'];
     let randomChoice = Math.floor(Math.random() * choices.length) + 1;
@@ -11,7 +14,7 @@ function getComputerChoice() {
         return "Scissors";
 };
 
-
+//function game() {
 function playRound(playerSelection, computerSelection) {
     const flexPlayerSelection = playerSelection.toLowerCase();
     const flexComputerSelection = computerSelection.toLowerCase();
@@ -45,6 +48,8 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
+//};
 
 
 const computerSelection = getComputerChoice();
