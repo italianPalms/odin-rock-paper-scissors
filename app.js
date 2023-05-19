@@ -11,10 +11,6 @@ function getComputerChoice() {
         return "Scissors";
 };
 
-const computerChoice = getComputerChoice();
-console.log("Computer's choice", computerChoice);
-
-const computerSelection = computerChoice;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "Rock") {
@@ -48,5 +44,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
+const computerSelection = getComputerChoice();
 const playerSelection = "Scissors";
+console.log("Computer's Choice:", getComputerChoice());
 console.log(playRound(playerSelection, computerSelection));
