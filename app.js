@@ -60,7 +60,6 @@ function playGame() {
         console.log("Computer choice", computerSelection);
 
         const result = playRound(playerSelection, computerSelection);
-        console.log(result);
         console.log(playerScore);
         console.log(computerScore);
 
