@@ -1,9 +1,7 @@
 
-let playerScore = 0
-let computerScore = 0
-const computerSelection = getComputerChoice().toLowerCase();
-const playerSelection = prompt("Make your choice").toLowerCase();
 
+const computerSelection = getComputerChoice().toLowerCase();
+//const playerSelection = ("Make your choice").toLowerCase();
 
 function getComputerChoice() {
     let choices = ['rock', 'paper', 'scissors'];
@@ -18,49 +16,72 @@ function getComputerChoice() {
 };
 
 
-function getPlayerChoice() {
-    let playerSelection = prompt("Make your choice");
-    return getPlayerChoice
-}
 
+//function getPlayerChoice() {
+  //  let playerSelection = prompt("Make your choice"); 
+   // return getPlayerChoice
+//};
+
+let playerScore = 0;
+let computerScore = 0;
+let roundsPlayed = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
-            return "It's a tie";
+            console.log("It's a tie");
         } else if (computerSelection === "paper") {
-            return "Computer wins!";
+            console.log("Computer wins!");
+            computerScore += 1;
         } else {
-            return "Congratz, you win!";
+            console.log("Congratz, you win!");
+            playerScore += 1;
         }
     }
 
     else if (playerSelection === "paper") {
         if (computerSelection === "paper") {
-            return "It's a tie";
+            console.log("It's a tie");
         } else if (computerSelection === "scissors") {
-            return "Computer wins";
+            console.log("Computer wins");
+            computerScore += 1;
         } else {
-            return "Congratz, you win!";
+            console.log("Congratz, you win!");
+            playerScore += 1;
         }
     }
 
     else if (playerSelection === "scissors") {
         if (computerSelection === "scissors") {
-            return "It's a tie";
+            console.log("It's a tie");
         } else if (computerSelection === "rock") {
-            return "Computer wins";
+            console.log("Computer wins");
+            computerScore += 1;
         } else {
-            return "Congratz, you win!";
+            console.log("Congratz, you win!");
+            playerScore += 1;
         }
     }
 }
 
-function game() {
+function playGame() {
+    if (roundsPlayed < 5) {
+        const playerSelection = prompt("Make you choice");
+        console.log("Your choice", playerSelection);
+        const computerSelection = getComputerChoice();
+        console.log("Computer choice", computerSelection);
 
+        const result = playRound(playerSelection, computerSelection);
+        console.log(result);
+        console.log(playerScore);
+        console.log(computerScore);
+
+        roundsPlayed++;
+        playGame();
+    } else {
+        console.log("Player Score:", playerScore);
+        console.log("Computer Score:", computerScore);
+    }
 }
 
-
-console.log(playerSelection);
-console.log(playRound(playerSelection, computerSelection));
-console.log('Computer choice', computerSelection)
+playGame();
