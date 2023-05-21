@@ -1,7 +1,6 @@
 
 
 const computerSelection = getComputerChoice().toLowerCase();
-//const playerSelection = ("Make your choice").toLowerCase();
 
 function getComputerChoice() {
     let choices = ['rock', 'paper', 'scissors'];
@@ -14,13 +13,6 @@ function getComputerChoice() {
     } else
         return "scissors";
 };
-
-
-
-//function getPlayerChoice() {
-  //  let playerSelection = prompt("Make your choice"); 
-   // return getPlayerChoice
-//};
 
 let playerScore = 0;
 let computerScore = 0;
