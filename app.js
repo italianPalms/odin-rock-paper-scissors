@@ -29,9 +29,7 @@ function playRound(playerSelection, computerSelection) {
             console.log("Congratz, you win!");
             playerScore += 1;
         }
-    }
-
-    else if (playerSelection === "paper") {
+    } else if (playerSelection === "paper") {
         if (computerSelection === "paper") {
             console.log("It's a tie");
         } else if (computerSelection === "scissors") {
@@ -41,9 +39,7 @@ function playRound(playerSelection, computerSelection) {
             console.log("Congratz, you win!");
             playerScore += 1;
         }
-    }
-
-    else if (playerSelection === "scissors") {
+    } else if (playerSelection === "scissors") {
         if (computerSelection === "scissors") {
             console.log("It's a tie");
         } else if (computerSelection === "rock") {
