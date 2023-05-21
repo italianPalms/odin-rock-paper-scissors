@@ -14,7 +14,10 @@ function getComputerChoice() {
         return "Scissors";
 };
 
-//function game() {
+
+const computerSelection = getComputerChoice();
+const playerSelection = "Rock";
+
 function playRound(playerSelection, computerSelection) {
     const flexPlayerSelection = playerSelection.toLowerCase();
     const flexComputerSelection = computerSelection.toLowerCase();
@@ -49,10 +52,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-//};
 
 
-const computerSelection = getComputerChoice();
-const playerSelection = "Scissors";
-console.log("Computer's Choice:", getComputerChoice());
 console.log(playRound(playerSelection, computerSelection));
+console.log('Compter choice', computerSelection)
