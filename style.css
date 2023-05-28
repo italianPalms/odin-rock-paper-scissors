@@ -19,3 +19,12 @@ body {
     font-size: 18px;
     padding-top: 10px;
 }
+
+.player {
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.computer {
+    font-size: 18px;
+}
