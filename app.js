@@ -2,6 +2,8 @@
 
 const computerSelection = getComputerChoice().toLowerCase();
 
+
+
 function getComputerChoice() {
     let choices = ['rock', 'paper', 'scissors'];
     let randomChoice = Math.floor(Math.random() * choices.length) + 1;
@@ -52,23 +54,33 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
+
+
 function playGame() {
-    if (roundsPlayed < 5) {
+    if (roundsPlayed) {
         const playerSelection = prompt("Make you choice");
-        console.log("Your choice", playerSelection);
         const computerSelection = getComputerChoice();
-        console.log("Computer choice", computerSelection);
+       
 
         const result = playRound(playerSelection, computerSelection);
-        console.log(playerScore);
-        console.log(computerScore);
 
         roundsPlayed++;
         playGame();
-    } else {
-        console.log("Player Score:", playerScore);
-        console.log("Computer Score:", computerScore);
     }
 }
 
 playGame();
+
+const btns = document.querySelectorAll("button");
+btns.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+        const playerSelection = event.target.id;
+        const computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+        console.log("Your choice", playerSelection);
+        console.log("Computer choice", computerSelection);
+        console.log("Player Score", playerScore);
+        console.log("Computer Score", computerScore);
+    });
+});
