@@ -79,6 +79,7 @@ function playGame() {
             }
             if (playerScore === 5 || computerScore === 5) {
                winner.textContent = winnerMsg;
+               refresh.textContent = "Refresh the page to play another game :)";
                btns.forEach ((btn) => {
                 btn.style.visibility = "hidden";
                });
@@ -119,3 +120,8 @@ const winner = document.createElement("div");
 winner.classList.add("winner");
 winner.textContent = ""
 container.appendChild(winner);
+
+const refresh = document.createElement("div");
+refresh.classList.add("refresh");
+refresh.textContent = "";
+container.appendChild(refresh);
