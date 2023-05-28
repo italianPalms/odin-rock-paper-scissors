@@ -20,38 +20,49 @@ let playerScore = 0;
 let computerScore = 0;
 let roundsPlayed = 0;
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection, result) {
+    let resultMsg = {};
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
-            console.log("It's a tie");
+            resultMsg = "It's a tie";
+            //console.log("It's a tie");
         } else if (computerSelection === "paper") {
-            console.log("Computer wins!");
+            resultMsg = "Computer wins!";
+            //console.log("Computer wins!");
             computerScore += 1;
         } else {
-            console.log("Congratz, you win!");
+            resultMsg = "Congratz, you win!";
+            //console.log("Congratz, you win!");
             playerScore += 1;
         }
     } else if (playerSelection === "paper") {
         if (computerSelection === "paper") {
-            console.log("It's a tie");
+            resultMsg = "It's a tie";
+            //console.log("It's a tie");
         } else if (computerSelection === "scissors") {
-            console.log("Computer wins");
+            resultMsg = "Computer wins";
+            //console.log("Computer wins");
             computerScore += 1;
         } else {
-            console.log("Congratz, you win!");
+            resultMsg = "Congratz, you win!";
+            //console.log("Congratz, you win!");
             playerScore += 1;
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "scissors") {
-            console.log("It's a tie");
+            resultMsg = "It's a tie";
+            //console.log("It's a tie");
         } else if (computerSelection === "rock") {
-            console.log("Computer wins");
+            resultMsg = "Computer wins";
+            //console.log("Computer wins");
             computerScore += 1;
         } else {
-            console.log("Congratz, you win!");
+            resultMsg = "Congratz, you win!";
+            //console.log("Congratz, you win!");
             playerScore += 1;
         }
     }
+    return resultMsg;
 }
 
 function playGame() {
@@ -81,6 +92,11 @@ contentComputerChoice.classList.add("computerChoice");
 contentComputerChoice.textContent = "Computer choice: ";
 container.appendChild(contentComputerChoice);
 
+const resultMsg = document.createElement("div");
+resultMsg.classList.add("resultMsg");
+resultMsg.textContent = "Result: ";
+container.appendChild(resultMsg);
+
 
 
 
@@ -89,7 +105,7 @@ btns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
         const playerSelection = event.target.id;
         const computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
+        const roundResultMsg = playRound(playerSelection, computerSelection);
         console.log("Your choice", playerSelection);
         console.log("Computer choice", computerSelection);
         console.log("Player Score", playerScore);
@@ -97,7 +113,9 @@ btns.forEach((btn) => {
 
         contentYourChoice.textContent = "Your choice: " + playerSelection;
 
-        contentComputerChoice.textContent = "Computer choice " + computerSelection;
+        contentComputerChoice.textContent = "Computer choice: " + computerSelection;
+
+        resultMsg.textContent = "Result: " + roundResultMsg;
     });
 });
 
