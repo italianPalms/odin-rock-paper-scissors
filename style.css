@@ -6,4 +6,9 @@
 
 .computerChoice {
     font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.result {
+    font-size: 18px;
 }
