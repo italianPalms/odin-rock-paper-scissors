@@ -1,6 +1,6 @@
 
 
-const computerSelection = getComputerChoice().toLowerCase();
+const computerSelection = getComputerChoice();
 
 
 
@@ -20,50 +20,47 @@ let playerScore = 0;
 let computerScore = 0;
 let roundsPlayed = 0;
 
-function playRound(playerSelection, computerSelection, result) {
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+
     let resultMsg = {};
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
             resultMsg = "It's a tie";
-            //console.log("It's a tie");
         } else if (computerSelection === "paper") {
             resultMsg = "Computer wins!";
-            //console.log("Computer wins!");
             computerScore += 1;
         } else {
             resultMsg = "Congratz, you win!";
-            //console.log("Congratz, you win!");
             playerScore += 1;
         }
     } else if (playerSelection === "paper") {
         if (computerSelection === "paper") {
             resultMsg = "It's a tie";
-            //console.log("It's a tie");
         } else if (computerSelection === "scissors") {
             resultMsg = "Computer wins";
-            //console.log("Computer wins");
             computerScore += 1;
         } else {
             resultMsg = "Congratz, you win!";
-            //console.log("Congratz, you win!");
             playerScore += 1;
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "scissors") {
             resultMsg = "It's a tie";
-            //console.log("It's a tie");
         } else if (computerSelection === "rock") {
             resultMsg = "Computer wins";
-            //console.log("Computer wins");
             computerScore += 1;
         } else {
             resultMsg = "Congratz, you win!";
-            //console.log("Congratz, you win!");
             playerScore += 1;
         }
     }
+
     return resultMsg;
 }
+
+
 
 function playGame() {
     if (roundsPlayed) {
@@ -82,6 +79,12 @@ playGame();
 
 
 const container = document.querySelector(".container");
+
+const resultMsg = document.createElement("div");
+resultMsg.classList.add("resultMsg");
+resultMsg.textContent = "Result: ";
+container.appendChild(resultMsg);
+
 const contentYourChoice = document.createElement("div");
 contentYourChoice.classList.add("yourChoice");
 contentYourChoice.textContent = "Your choice: ";
@@ -92,10 +95,6 @@ contentComputerChoice.classList.add("computerChoice");
 contentComputerChoice.textContent = "Computer choice: ";
 container.appendChild(contentComputerChoice);
 
-const resultMsg = document.createElement("div");
-resultMsg.classList.add("resultMsg");
-resultMsg.textContent = "Result: ";
-container.appendChild(resultMsg);
 
 
 
@@ -111,11 +110,12 @@ btns.forEach((btn) => {
         console.log("Player Score", playerScore);
         console.log("Computer Score", computerScore);
 
+        resultMsg.textContent = "Result: " + roundResultMsg;
+
         contentYourChoice.textContent = "Your choice: " + playerSelection;
 
         contentComputerChoice.textContent = "Computer choice: " + computerSelection;
 
-        resultMsg.textContent = "Result: " + roundResultMsg;
     });
 });
 
