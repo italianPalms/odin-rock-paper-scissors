@@ -95,6 +95,11 @@ contentComputerChoice.classList.add("computerChoice");
 contentComputerChoice.textContent = "Computer choice: ";
 container.appendChild(contentComputerChoice);
 
+computerScore = document.createElement("div");
+computerScore.classList.add("computerScore");
+computerScore.textContent = "Computer Score: ";
+container.appendChild(computerScore);
+
 
 
 
