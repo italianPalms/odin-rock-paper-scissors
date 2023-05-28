@@ -54,9 +54,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-
-
-
 function playGame() {
     if (roundsPlayed) {
         const playerSelection = prompt("Make you choice");
@@ -72,6 +69,21 @@ function playGame() {
 
 playGame();
 
+
+const container = document.querySelector(".container");
+const contentYourChoice = document.createElement("div");
+contentYourChoice.classList.add("yourChoice");
+contentYourChoice.textContent = "Your choice: ";
+container.appendChild(contentYourChoice);
+
+const contentComputerChoice = document.createElement("div");
+contentComputerChoice.classList.add("computerChoice");
+contentComputerChoice.textContent = "Computer choice: ";
+container.appendChild(contentComputerChoice);
+
+
+
+
 const btns = document.querySelectorAll("button");
 btns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
@@ -82,5 +94,11 @@ btns.forEach((btn) => {
         console.log("Computer choice", computerSelection);
         console.log("Player Score", playerScore);
         console.log("Computer Score", computerScore);
+
+        contentYourChoice.textContent = "Your choice: " + playerSelection;
+
+        contentComputerChoice.textContent = "Computer choice " + computerSelection;
     });
 });
+
+
