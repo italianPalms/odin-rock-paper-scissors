@@ -3,6 +3,12 @@ body {
     color: white;
 }
 
+h1 {
+    font-size: 40px;
+    align-content: center;
+    text-align: center;
+}
+
 .yourChoice {
     font-size: 18px;
     padding-bottom: 10px;
