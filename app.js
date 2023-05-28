@@ -21,8 +21,8 @@ let computerScore = 0;
 let roundsPlayed = 0;
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+    //playerSelection = playerSelection.toLowerCase();
+    //computerSelection = computerSelection.toLowerCase();
 
     let resultMsg = {};
     if (playerSelection === "rock") {
@@ -56,28 +56,42 @@ function playRound(playerSelection, computerSelection) {
             playerScore += 1;
         }
     }
-
     return resultMsg;
-    return computerScore;
 }
 
 
 
 function playGame() {
-    if (roundsPlayed) {
-        const playerSelection = prompt("Make you choice");
-        const computerSelection = getComputerChoice();
-       
+    const btns = document.querySelectorAll("button");
+    btns.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+            const playerSelection = event.target.id;
+            const computerSelection = getComputerChoice();
+            const roundResultMsg = playRound(playerSelection, computerSelection);
+    
+            resultMsg.textContent = "Result: " + roundResultMsg;
+    
+            contentYourChoice.textContent = "Your choice: " + playerSelection;
+    
+            contentComputerChoice.textContent = "Computer choice: " + computerSelection;
+    
+            computer.textContent = "Computer Score: " + computerScore;
+    
+            player.textContent = "Player Score: " + playerScore;
 
-        const result = playRound(playerSelection, computerSelection);
-
-        roundsPlayed++;
-        playGame();
-    }
-}
-
-playGame();
-
+            if (playerScore === 5) {
+                console.log("Player wins the game");
+            } else if (computerScore === 5) {
+                console.log("Computer wins the game");
+            }
+    
+        });
+    });
+    
+    
+   
+    }; 
+    playGame();
 
 const container = document.querySelector(".container");
 
@@ -110,16 +124,12 @@ container.appendChild(computer);
 
 
 
-const btns = document.querySelectorAll("button");
+/*const btns = document.querySelectorAll("button");
 btns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
         const playerSelection = event.target.id;
         const computerSelection = getComputerChoice();
         const roundResultMsg = playRound(playerSelection, computerSelection);
-        console.log("Your choice", playerSelection);
-        console.log("Computer choice", computerSelection);
-        console.log("Player Score", playerScore);
-        console.log("Computer Score", computerScore);
 
         resultMsg.textContent = "Result: " + roundResultMsg;
 
@@ -133,5 +143,7 @@ btns.forEach((btn) => {
 
     });
 });
+
+*/
 
 
