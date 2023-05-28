@@ -79,16 +79,18 @@ function playGame() {
     
             player.textContent = "Player Score: " + playerScore;
 
+            let winnerMsg = {};
             if (playerScore === 5) {
-                console.log("Player wins the game");
+                winnerMsg = "You win the game!";
             } else if (computerScore === 5) {
-                console.log("Computer wins the game");
+                winnerMsg = "Computer wins the game!";
             }
-    
+            if (playerScore === 5 || computerScore === 5) {
+               winner.textContent = winnerMsg;
+               button.style.display = none;
+            }
         });
     });
-    
-    
    
     }; 
     playGame();
@@ -119,6 +121,11 @@ const computer = document.createElement("div");
 computer.classList.add("computer");
 computer.textContent = "Computer Score: ";
 container.appendChild(computer);
+
+const winner = document.createElement("div");
+winner.classList.add("winner");
+winner.textContent = ""
+container.appendChild(winner);
 
 
 
