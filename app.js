@@ -21,9 +21,6 @@ let computerScore = 0;
 let roundsPlayed = 0;
 
 function playRound(playerSelection, computerSelection) {
-    //playerSelection = playerSelection.toLowerCase();
-    //computerSelection = computerSelection.toLowerCase();
-
     let resultMsg = {};
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
@@ -87,7 +84,9 @@ function playGame() {
             }
             if (playerScore === 5 || computerScore === 5) {
                winner.textContent = winnerMsg;
-               button.style.display = none;
+               btns.forEach ((btn) => {
+                btn.style.visibility = "hidden";
+               });
             }
         });
     });
