@@ -9,32 +9,43 @@ h1 {
     text-align: center;
 }
 
+#rock {
+    text-align: center;
+    align-items: center;
+}
+
 .yourChoice {
     font-size: 18px;
     padding-bottom: 10px;
     padding-top: 10px;
+    text-align: center;
 }
 
 .computerChoice {
     font-size: 18px;
     padding-bottom: 10px;
+    text-align: center;
 }
 
 .resultMsg {
     font-size: 18px;
     padding-top: 10px;
+    text-align: center;
 }
 
 .player {
     font-size: 18px;
     padding-bottom: 10px;
+    text-align: center;
 }
 
 .computer {
     font-size: 18px;
     padding-bottom: 10px;
+    text-align: center;
 }
 
 .winner {
     font-size: 30px;
+    text-align: center;
 }
