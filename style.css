@@ -9,10 +9,22 @@ h1 {
     text-align: center;
 }
 
-#rock {
+.btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px 10px 10px;
+    }
+
+button {
+    width: 10%;
     text-align: center;
-    align-items: center;
+    background-color: gray;
+    color: white;
+    font-size: 18px;
+    margin: 0 10px;
 }
+
+
 
 .yourChoice {
     font-size: 18px;
@@ -29,7 +41,7 @@ h1 {
 
 .resultMsg {
     font-size: 18px;
-    padding-top: 10px;
+    padding-top: 40px;
     text-align: center;
 }
 
