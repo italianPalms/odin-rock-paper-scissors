@@ -1,6 +1,7 @@
 body {
     background-color: black;
     color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h1 {
@@ -31,18 +32,15 @@ button {
     margin: 0 10px;
 }
 
-
-
 .yourChoice {
     font-size: 18px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 25px;
     text-align: center;
 }
 
 .computerChoice {
     font-size: 18px;
-    padding-bottom: 10px;
+    padding-top: 25px;
     text-align: center;
 }
 
@@ -54,17 +52,24 @@ button {
 
 .player {
     font-size: 18px;
-    padding-bottom: 10px;
+    padding-top: 25px;
     text-align: center;
 }
 
 .computer {
     font-size: 18px;
-    padding-bottom: 10px;
+    padding-top: 25px;
     text-align: center;
 }
 
 .winner {
     font-size: 30px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.refresh {
+    font-size: 22px;
+    padding-top: 100px;
     text-align: center;
 }
