@@ -58,6 +58,7 @@ function playRound(playerSelection, computerSelection) {
     }
 
     return resultMsg;
+    return computerScore;
 }
 
 
@@ -95,10 +96,15 @@ contentComputerChoice.classList.add("computerChoice");
 contentComputerChoice.textContent = "Computer choice: ";
 container.appendChild(contentComputerChoice);
 
-computerScore = document.createElement("div");
-computerScore.classList.add("computerScore");
-computerScore.textContent = "Computer Score: ";
-container.appendChild(computerScore);
+const player = document.createElement("div");
+player.classList.add("player");
+player.textContent = "Player Score: ";
+container.appendChild(player);
+
+const computer = document.createElement("div");
+computer.classList.add("computer");
+computer.textContent = "Computer Score: ";
+container.appendChild(computer);
 
 
 
@@ -120,6 +126,10 @@ btns.forEach((btn) => {
         contentYourChoice.textContent = "Your choice: " + playerSelection;
 
         contentComputerChoice.textContent = "Computer choice: " + computerSelection;
+
+        computer.textContent = "Computer Score: " + computerScore;
+
+        player.textContent = "Player Score: " + playerScore;
 
     });
 });
