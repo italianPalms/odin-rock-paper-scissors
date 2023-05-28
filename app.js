@@ -1,8 +1,5 @@
 
-
 const computerSelection = getComputerChoice();
-
-
 
 function getComputerChoice() {
     let choices = ['rock', 'paper', 'scissors'];
@@ -53,10 +50,8 @@ function playRound(playerSelection, computerSelection) {
             playerScore += 1;
         }
     }
-    return resultMsg;
+return resultMsg;
 }
-
-
 
 function playGame() {
     const btns = document.querySelectorAll("button");
@@ -90,9 +85,8 @@ function playGame() {
             }
         });
     });
-   
-    }; 
-    playGame();
+}; 
+playGame();
 
 const container = document.querySelector(".container");
 
@@ -125,31 +119,3 @@ const winner = document.createElement("div");
 winner.classList.add("winner");
 winner.textContent = ""
 container.appendChild(winner);
-
-
-
-
-
-/*const btns = document.querySelectorAll("button");
-btns.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-        const playerSelection = event.target.id;
-        const computerSelection = getComputerChoice();
-        const roundResultMsg = playRound(playerSelection, computerSelection);
-
-        resultMsg.textContent = "Result: " + roundResultMsg;
-
-        contentYourChoice.textContent = "Your choice: " + playerSelection;
-
-        contentComputerChoice.textContent = "Computer choice: " + computerSelection;
-
-        computer.textContent = "Computer Score: " + computerScore;
-
-        player.textContent = "Player Score: " + playerScore;
-
-    });
-});
-
-*/
-
-
