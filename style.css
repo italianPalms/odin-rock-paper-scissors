@@ -15,8 +15,15 @@ h1 {
     padding: 10px 10px 10px 10px;
     }
 
+
+.btn-container2 {
+    display: flex;
+    justify-content: center;
+    padding: 100px 10px 10px 10px;
+    }
+
 button {
-    width: 10%;
+    width: 15%;
     text-align: center;
     background-color: gray;
     color: white;
